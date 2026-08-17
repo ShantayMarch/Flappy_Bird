@@ -25,8 +25,8 @@ func _process(delta: float) -> void:
 	if bg.position.x <= -bg_width:
 		bg.position.x = 0
 	if Input.is_action_just_pressed("main_menu"):
-		main_menu.emit()
-		print("Going to Main Menu")
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	
 
 
 func _on_pipe_timer_timeout() -> void:
@@ -40,7 +40,6 @@ func _on_player_players_score() -> void:
 	players_score += 1
 	ui_score.text = "Player Score: " + str(players_score)
 	
-	
 
 func _on_player_players_defeat() -> void:
-	reset_level.emit()
+	get_tree().reload_current_scene()
