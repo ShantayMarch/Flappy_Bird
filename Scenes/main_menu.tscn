@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bf5sss3foqymt"]
+
+[ext_resource type="Script" uid="uid://deuohb2qvisfq" path="res://Scenes/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://bl7cks4vwdo7p" path="res://Assets/Background3.png" id="1_48xlc"]
+[ext_resource type="Texture2D" uid="uid://ba6yx16w5dfvv" path="res://Assets/AllBird1.png" id="2_1ehe0"]
+
+[node name="Main Menu" type="Node2D" unique_id=946300951]
+script = ExtResource("1_1ehe0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=222290867]
+position = Vector2(571, 469)
+scale = Vector2(4.8945313, 4.8945313)
+texture = ExtResource("1_48xlc")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1937916231]
+position = Vector2(188.00002, 515)
+scale = Vector2(8.8125, 8.615792)
+texture = ExtResource("2_1ehe0")
+hframes = 4
+vframes = 7
+frame = 14
+
+[node name="Button" type="Button" parent="." unique_id=1289320479]
+offset_left = 87.0
+offset_top = 647.0
+offset_right = 438.0
+offset_bottom = 745.0
+theme_override_font_sizes/font_size = 29
+text = "Start Game"
+
+[node name="Label" type="Label" parent="." unique_id=1687300255]
+offset_left = 117.0
+offset_top = 279.0
+offset_right = 442.0
+offset_bottom = 436.0
+theme_override_font_sizes/font_size = 46
+text = "Flappy Bird"
+uppercase = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cqfunqnga7k4o"]
+
+[ext_resource type="Script" uid="uid://b1kx3xxbolrj0" path="res://Scenes/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://ba6yx16w5dfvv" path="res://Assets/AllBird1.png" id="1_v0iea"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bbgfi"]
+radius = 27.166155
+
+[node name="Player" type="Area2D" unique_id=618970296]
+script = ExtResource("1_cvnsp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1305283441]
+scale = Vector2(5, 5)
+texture = ExtResource("1_v0iea")
+hframes = 4
+vframes = 7
+frame = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1442092992]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_bbgfi")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="players_defeat" from="." to="." method="_on_players_defeat"]

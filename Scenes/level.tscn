@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cqfx6eiclkwx4"]
+
+[ext_resource type="Script" uid="uid://cvljlea2v24u6" path="res://Scenes/level.gd" id="1_6phgx"]
+[ext_resource type="PackedScene" uid="uid://cqfunqnga7k4o" path="res://Scenes/player.tscn" id="1_tumq0"]
+[ext_resource type="Texture2D" uid="uid://bl7cks4vwdo7p" path="res://Assets/Background3.png" id="2_k5f4k"]
+
+[node name="Level" type="Node2D" unique_id=1417771947]
+script = ExtResource("1_6phgx")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1652790784]
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("2_k5f4k")
+centered = false
+
+[node name="Player" parent="." unique_id=618970296 instance=ExtResource("1_tumq0")]
+position = Vector2(170, 655)
+
+[node name="Pipe Timer" type="Timer" parent="." unique_id=1979173673]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1153853905]
+
+[node name="Player Score" type="Label" parent="CanvasLayer" unique_id=559713399]
+offset_right = 575.0
+offset_bottom = 178.0
+text = "Player Score: "
+
+[connection signal="players_defeat" from="Player" to="." method="_on_player_players_defeat"]
+[connection signal="players_score" from="Player" to="." method="_on_player_players_score"]
+[connection signal="timeout" from="Pipe Timer" to="." method="_on_pipe_timer_timeout"]

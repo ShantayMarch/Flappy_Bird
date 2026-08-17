@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://ds7o14rvdjkho"]
+
+[ext_resource type="Script" uid="uid://dyp8agdfmn8o5" path="res://Scenes/pipes.gd" id="1_7ktcp"]
+[ext_resource type="Texture2D" uid="uid://b0353u7heyusy" path="res://Assets/PipeStyle1.png" id="2_ws3sl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dyj7g"]
+size = Vector2(159, 625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbgfi"]
+size = Vector2(151.5, 657)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_va4nv"]
+size = Vector2(26, 916)
+
+[node name="Pipes" type="Node2D" unique_id=539972532]
+script = ExtResource("1_7ktcp")
+
+[node name="TopPipe" type="Area2D" parent="." unique_id=891655626 groups=["pipes"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="TopPipe" unique_id=1023425979]
+position = Vector2(-9.536743e-07, 84)
+scale = Vector2(5.5625005, 8.2375)
+texture = ExtResource("2_ws3sl")
+hframes = 4
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopPipe" unique_id=331893005]
+position = Vector2(3.5, 82.5)
+shape = SubResource("RectangleShape2D_dyj7g")
+
+[node name="BottomPipe" type="Area2D" parent="." unique_id=663502321 groups=["pipes"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="BottomPipe" unique_id=1730434540]
+position = Vector2(3.000002, 1057.3856)
+scale = Vector2(5.304687, 8.515361)
+texture = ExtResource("2_ws3sl")
+hframes = 4
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPipe" unique_id=1858232861]
+position = Vector2(2.25, 1053.5)
+shape = SubResource("RectangleShape2D_bbgfi")
+
+[node name="Goalpost" type="Area2D" parent="." unique_id=52011819 groups=["score"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goalpost" unique_id=1040745431]
+position = Vector2(0, 559)
+shape = SubResource("RectangleShape2D_va4nv")
+debug_color = Color(0.83704245, 0.20573696, 0.8053471, 0.41960785)
