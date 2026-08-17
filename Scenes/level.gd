@@ -17,8 +17,6 @@ func _ready() -> void:
 	$"Pipe Timer".start(3)
 	ui_score.text = "Player Score: 0" 
 
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	bg.position.x = bg.position.x - (speed * delta)
@@ -28,13 +26,10 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 	
 
-
 func _on_pipe_timer_timeout() -> void:
 	var new_pipe = pipes.instantiate()
 	add_child(new_pipe)
 	new_pipe.position.x = get_window().get_size().x +50
-
-
 
 func _on_player_players_score() -> void:
 	players_score += 1
